@@ -1,0 +1,75 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/TextViewStyle</item>
+        <item name="materialButtonStyle">@style/GreenButtonStyle</item>
+        <item name="bottomAppBarStyle">@style/BottomAppBarStyle</item>
+        <item name="floatingActionButtonStyle">@style/FloatingActionButtonStyle</item>
+        <item name="android:windowBackground">@color/darkBackground</item>
+        <item name="actionBarStyle">@style/ToolbarStyle</item>
+        <item name="cardViewStyle">@style/CardViewStyle</item>
+        <item name="textInputStyle">@style/TextInputLayoutStyle</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="startIconTint">@color/colorPrimary</item>
+        <item name="boxStrokeColor">@drawable/edit_text_box_border</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+    </style>
+
+    <style name="CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/mediumDarkBackground</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <item name="background">@color/mediumDarkBackground</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="BottomAppBarStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/mediumDarkBackground</item>
+    </style>
+
+    <style name="GreenButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="RedButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="backgroundTint">#FF0000</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="FloatingActionButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <!--<item name="shapeAppearanceOverlay">@style/FabDiamondOverlay</item>-->
+    </style>
+
+    <style name="FabDiamondOverlay" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerFamilyBottomLeft">cut</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">50%</item>
+        <item name="cornerSizeBottomRight">50%</item>
+        <item name="cornerSizeTopLeft">0%</item>
+        <item name="cornerSizeTopRight">0%</item>
+    </style>
+
+    <style name="TextViewStyle" parent="android:Widget.TextView">
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>
