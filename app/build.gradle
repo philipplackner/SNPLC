@@ -86,7 +86,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:19.4.0'
 
     // Firebase Firestore
-    implementation 'com.google.firebase:firebase-firestore:21.6.0'
+    implementation 'com.google.firebase:firebase-firestore:21.7.1'
 
     // Firebase Storage KTX
     implementation 'com.google.firebase:firebase-storage-ktx:19.2.0'
@@ -97,8 +97,6 @@ dependencies {
     // Circular Image View
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    implementation "com.andkulikov:transitionseverywhere:1.8.1"
-
     // Android Image Cropper
-    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 }
