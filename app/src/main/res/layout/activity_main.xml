@@ -42,7 +42,6 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
             app:itemIconTint="@drawable/bottom_nav_selector"
-            app:menu="@menu/bottom_nav_menu"
             android:background="#00000000"/>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
