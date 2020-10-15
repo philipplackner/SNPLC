@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.snplc.ui.main.fragments.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.snplc.ui.main.fragments.SearchFragment"
+        android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.example.snplc.ui.main.fragments.CreatePostFragment"
+        android:label="CreatePostFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.snplc.ui.main.fragments.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.snplc.ui.main.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
+
+    <action android:id="@+id/globalActionToCreatePostFragment"
+        app:destination="@id/createPostFragment" />
+</navigation>

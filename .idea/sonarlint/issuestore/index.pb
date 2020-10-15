@@ -19,8 +19,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 U
 %app/src/main/res/layout/item_post.xml,c\9\c93a562e619fa8652e1f96b2db154b274becae05
-c
-3app/src/main/java/com/example/snplc/AuthActivity.kt,e\7\e727e451de61cf1d837b0bbb86271a13559651a6
 y
 Iapp/src/main/java/com/example/snplc/ui/auth/fragments/RegisterFragment.kt,4\6\4620891c402715c5f5764104865d2c83ee93fbad
 l
