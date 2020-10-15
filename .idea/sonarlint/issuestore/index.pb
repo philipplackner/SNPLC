@@ -39,3 +39,5 @@ i
 9app/src/main/java/com/example/snplc/data/entities/User.kt,0\c\0c24268237a72bdd762d1d8f4b0cde6a9aaab295
 y
 Iapp/src/main/java/com/example/snplc/repositories/DefaultAuthRepository.kt,6\a\6a2f4462840968578a30f0b31bba98f6c6ca89e8
+d
+4app/src/main/java/com/example/snplc/di/AuthModule.kt,d\9\d9160aba0721b12841826db06fa6a88d6d189325
