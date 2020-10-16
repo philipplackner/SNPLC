@@ -1,6 +1,7 @@
 package com.example.snplc.repositories
 
 import android.net.Uri
+import com.example.snplc.data.entities.Post
 import com.example.snplc.data.entities.User
 import com.example.snplc.other.Resource
 
@@ -11,4 +12,6 @@ interface MainRepository {
     suspend fun getUsers(uids: List<String>): Resource<List<User>>
 
     suspend fun getUser(uid: String): Resource<User>
+
+    suspend fun getPostsForFollows(): Resource<List<Post>>
 }
