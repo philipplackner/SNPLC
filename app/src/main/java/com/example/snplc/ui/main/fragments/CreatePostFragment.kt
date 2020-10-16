@@ -15,6 +15,7 @@ import com.bumptech.glide.RequestManager
 import com.example.snplc.R
 import com.example.snplc.other.EventObserver
 import com.example.snplc.ui.main.viewmodels.CreatePostViewModel
+import com.example.snplc.ui.slideUpViews
 import com.example.snplc.ui.snackbar
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
@@ -70,6 +71,8 @@ class CreatePostFragment : Fragment(R.layout.fragment_create_post) {
                 viewModel.createPost(uri, etPostDescription.text.toString())
             } ?: snackbar(getString(R.string.error_no_image_chosen))
         }
+
+        slideUpViews(requireContext(), ivPostImage, btnSetPostImage, tilPostText, btnPost)
     }
 
     private fun subscribeToObservers() {
