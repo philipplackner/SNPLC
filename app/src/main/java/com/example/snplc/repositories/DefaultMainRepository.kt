@@ -84,6 +84,14 @@ class DefaultMainRepository : MainRepository {
         }
     }
 
+    override suspend fun deletePost(post: Post) = withContext(Dispatchers.IO) {
+        safeCall {
+            posts.document(post.id).delete().await()
+            storage.getReferenceFromUrl(post.imageUrl).delete().await()
+            Resource.Success(post)
+        }
+    }
+
     override suspend fun getUsers(uids: List<String>) = withContext(Dispatchers.IO) {
         safeCall {
             val usersList = users.whereIn("uid", uids).orderBy("username").get().await()

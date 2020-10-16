@@ -16,4 +16,6 @@ interface MainRepository {
     suspend fun getPostsForFollows(): Resource<List<Post>>
 
     suspend fun toggleLikeForPost(post: Post): Resource<Boolean>
+
+    suspend fun deletePost(post: Post): Resource<Post>
 }
