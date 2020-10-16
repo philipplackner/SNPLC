@@ -2,6 +2,7 @@ package com.example.snplc.repositories
 
 import android.net.Uri
 import com.example.snplc.data.entities.Post
+import com.example.snplc.data.entities.User
 import com.example.snplc.other.Resource
 import com.example.snplc.other.safeCall
 import com.google.firebase.auth.FirebaseAuth
@@ -12,6 +13,7 @@ import dagger.hilt.android.scopes.ActivityScoped
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import java.lang.IllegalStateException
 import java.util.*
 
 @ActivityScoped
@@ -39,6 +41,26 @@ class DefaultMainRepository : MainRepository {
             )
             posts.document(postId).set(post).await()
             Resource.Success(Any())
+        }
+    }
+
+    override suspend fun getUsers(uids: List<String>) = withContext(Dispatchers.IO) {
+        safeCall {
+            val usersList = users.whereIn("uid", uids).orderBy("username").get().await()
+                .toObjects(User::class.java)
+            Resource.Success(usersList)
+        }
+    }
+
+    override suspend fun getUser(uid: String) = withContext(Dispatchers.IO) {
+        safeCall {
+            val user = users.document(uid).get().await().toObject(User::class.java)
+                ?: throw IllegalStateException()
+            val currentUid = FirebaseAuth.getInstance().uid!!
+            val currentUser = users.document(currentUid).get().await().toObject(User::class.java)
+                ?: throw IllegalStateException()
+            user.isFollowing = uid in currentUser.follows
+            Resource.Success(user)
         }
     }
 }

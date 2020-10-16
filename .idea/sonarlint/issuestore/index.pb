@@ -69,3 +69,7 @@ Mapp/src/main/java/com/example/snplc/ui/main/viewmodels/CreatePostViewModel.kt,
 Kapp/src/main/java/com/example/snplc/ui/main/fragments/CreatePostFragment.kt,a\3\a3b229816a56577220aaff06b00479c07368cd1b
 d
 4app/src/main/java/com/example/snplc/di/MainModule.kt,3\9\394209011356eb930c4d2b33c5c2548180dee4fb
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+a
+1app/src/main/java/com/example/snplc/ui/ViewExt.kt,9\e\9e9c85299a693c81c6119c0bff093688ca54f5c1
