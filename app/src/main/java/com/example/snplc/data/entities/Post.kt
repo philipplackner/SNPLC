@@ -7,12 +7,12 @@ import com.google.firebase.firestore.IgnoreExtraProperties
 data class Post(
     val id: String = "",
     val authorUid: String = "",
-    @Exclude var authorUsername: String = "",
-    @Exclude var authorProfilePictureUrl: String = "",
+    @get:Exclude var authorUsername: String = "",
+    @get:Exclude var authorProfilePictureUrl: String = "",
     val text: String = "",
     val imageUrl: String = "",
     val date: Long = 0L,
-    @Exclude var isLiked: Boolean = false,
-    @Exclude var isLiking: Boolean = false,
+    @get:Exclude var isLiked: Boolean = false,
+    @get:Exclude var isLiking: Boolean = false,
     val likedBy: List<String> = listOf()
 )
