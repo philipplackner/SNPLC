@@ -45,6 +45,26 @@ class DefaultMainRepository : MainRepository {
         }
     }
 
+    override suspend fun toggleLikeForPost(post: Post) = withContext(Dispatchers.IO) {
+        safeCall {
+            var isLiked = false
+            firestore.runTransaction { transaction ->
+                val uid = FirebaseAuth.getInstance().uid!!
+                val postResult = transaction.get(posts.document(post.id))
+                val currentLikes = postResult.toObject(Post::class.java)?.likedBy ?: listOf()
+                transaction.update(
+                    posts.document(post.id),
+                    "likedBy",
+                    if(uid in currentLikes) currentLikes - uid else {
+                        currentLikes + uid
+                        isLiked = true
+                    }
+                )
+            }.await()
+            Resource.Success(isLiked)
+        }
+    }
+
     override suspend fun getPostsForFollows() = withContext(Dispatchers.IO) {
         safeCall {
             val uid = FirebaseAuth.getInstance().uid!!
