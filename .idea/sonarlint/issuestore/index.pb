@@ -73,3 +73,5 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 a
 1app/src/main/java/com/example/snplc/ui/ViewExt.kt,9\e\9e9c85299a693c81c6119c0bff093688ca54f5c1
+{
+Kapp/src/main/java/com/example/snplc/ui/main/viewmodels/BasePostViewModel.kt,9\3\93a4593ba7e32c065be5b3fe0162f522136fa624
