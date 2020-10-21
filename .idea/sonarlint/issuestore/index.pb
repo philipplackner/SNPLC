@@ -41,8 +41,6 @@ d
 4app/src/main/java/com/example/snplc/di/AuthModule.kt,d\9\d9160aba0721b12841826db06fa6a88d6d189325
 Y
 )app/src/main/res/menu/bottom_nav_menu.xml,b\2\b2bdb93c5506261fbedb574044fb21ea44be597a
-^
-.app/src/main/res/navigation/main_nav_graph.xml,0\3\0388e14911aba5a195da0bd23b7746715c2d6f98
 S
 #app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
 k
@@ -75,3 +73,9 @@ a
 1app/src/main/java/com/example/snplc/ui/ViewExt.kt,9\e\9e9c85299a693c81c6119c0bff093688ca54f5c1
 {
 Kapp/src/main/java/com/example/snplc/ui/main/viewmodels/BasePostViewModel.kt,9\3\93a4593ba7e32c065be5b3fe0162f522136fa624
+k
+;app/src/main/java/com/example/snplc/adapters/PostAdapter.kt,4\8\48bfbbb5bf8db95215dbf3c46516c3551ff8f6db
+w
+Gapp/src/main/java/com/example/snplc/ui/main/viewmodels/HomeViewModel.kt,1\0\104e940d25d4b232ff7d0a5e9ad7dafe0b8ae260
+y
+Iapp/src/main/java/com/example/snplc/ui/main/fragments/BasePostFragment.kt,0\7\074e27245fe3d2fafa6b2e403058b00f3795f80f
