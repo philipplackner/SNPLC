@@ -24,6 +24,16 @@
         android:name="com.example.snplc.ui.main.fragments.SettingsFragment"
         android:label="SettingsFragment" />
 
+    <action android:id="@+id/globalActionToOthersProfileFragment"
+        app:destination="@id/othersProfileFragment" />
     <action android:id="@+id/globalActionToCreatePostFragment"
         app:destination="@id/createPostFragment" />
+    <fragment
+        android:id="@+id/othersProfileFragment"
+        android:name="com.example.snplc.ui.main.fragments.OthersProfileFragment"
+        android:label="OthersProfileFragment" >
+        <argument
+            android:name="uid"
+            app:argType="string" />
+    </fragment>
 </navigation>

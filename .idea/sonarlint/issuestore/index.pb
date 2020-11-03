@@ -83,3 +83,5 @@ w
 Gapp/src/main/java/com/example/snplc/ui/main/dialogs/DeletePostDialog.kt,e\b\eb78e51debcd33c91a2b4c038ff4699e3b17190b
 z
 Japp/src/main/java/com/example/snplc/ui/main/viewmodels/ProfileViewModel.kt,0\5\05f600ec9f7a126c1fa2dae74df262af5c4f7ca5
+~
+Napp/src/main/java/com/example/snplc/ui/main/fragments/OthersProfileFragment.kt,0\e\0ea75d6556bf0fee4d446651173b75915c13cf0f
