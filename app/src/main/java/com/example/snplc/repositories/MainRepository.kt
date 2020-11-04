@@ -29,4 +29,6 @@ interface MainRepository {
     suspend fun createComment(commentText: String, postId: String): Resource<Comment>
 
     suspend fun deleteComment(comment: Comment): Resource<Comment>
+
+    suspend fun getCommentForPost(postId: String): Resource<List<Comment>>
 }
