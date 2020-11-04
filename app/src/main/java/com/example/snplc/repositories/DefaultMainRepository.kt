@@ -1,6 +1,7 @@
 package com.example.snplc.repositories
 
 import android.net.Uri
+import com.example.snplc.data.entities.Comment
 import com.example.snplc.data.entities.Post
 import com.example.snplc.data.entities.User
 import com.example.snplc.other.Resource
@@ -64,8 +65,9 @@ class DefaultMainRepository : MainRepository {
 
     override suspend fun searchUser(query: String) = withContext(Dispatchers.IO) {
         safeCall {
-            val userResults = users.whereGreaterThanOrEqualTo("username", query.toUpperCase(Locale.ROOT))
-                .get().await().toObjects(User::class.java)
+            val userResults =
+                users.whereGreaterThanOrEqualTo("username", query.toUpperCase(Locale.ROOT))
+                    .get().await().toObjects(User::class.java)
             Resource.Success(userResults)
         }
     }
@@ -75,9 +77,11 @@ class DefaultMainRepository : MainRepository {
             var isFollowing = false
             firestore.runTransaction { transaction ->
                 val currentUid = auth.uid!!
-                val currentUser = transaction.get(users.document(currentUid)).toObject(User::class.java)!!
+                val currentUser =
+                    transaction.get(users.document(currentUid)).toObject(User::class.java)!!
                 isFollowing = uid in currentUser.follows
-                val newFollows = if(isFollowing) currentUser.follows - uid else currentUser.follows + uid
+                val newFollows =
+                    if (isFollowing) currentUser.follows - uid else currentUser.follows + uid
                 transaction.update(users.document(currentUid), "follows", newFollows)
             }.await()
             Resource.Success(!isFollowing)
@@ -94,7 +98,7 @@ class DefaultMainRepository : MainRepository {
                 transaction.update(
                     posts.document(post.id),
                     "likedBy",
-                    if(uid in currentLikes) currentLikes - uid else {
+                    if (uid in currentLikes) currentLikes - uid else {
                         isLiked = true
                         currentLikes + uid
                     }
@@ -120,6 +124,32 @@ class DefaultMainRepository : MainRepository {
                     post.isLiked = uid in post.likedBy
                 }
             Resource.Success(allPosts)
+        }
+    }
+
+    override suspend fun createComment(commentText: String, postId: String) =
+        withContext(Dispatchers.IO) {
+            safeCall {
+                val uid = auth.uid!!
+                val commentId = UUID.randomUUID().toString()
+                val user = getUser(uid).data!!
+                val comment = Comment(
+                    commentId,
+                    postId,
+                    uid,
+                    user.username,
+                    user.profilePictureUrl,
+                    commentText
+                )
+                comments.document(commentId).set(comment).await()
+                Resource.Success(comment)
+            }
+        }
+
+    override suspend fun deleteComment(comment: Comment) = withContext(Dispatchers.IO) {
+        safeCall {
+            comments.document(comment.commentId).delete().await()
+            Resource.Success(comment)
         }
     }
 
