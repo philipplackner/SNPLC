@@ -28,6 +28,8 @@
         app:destination="@id/othersProfileFragment" />
     <action android:id="@+id/globalActionToCreatePostFragment"
         app:destination="@id/createPostFragment" />
+    <action android:id="@+id/globalActionToCommentDialog"
+        app:destination="@id/commentDialog" />
     <fragment
         android:id="@+id/othersProfileFragment"
         android:name="com.example.snplc.ui.main.fragments.OthersProfileFragment"
@@ -36,4 +38,12 @@
             android:name="uid"
             app:argType="string" />
     </fragment>
+    <dialog
+        android:id="@+id/commentDialog"
+        android:name="com.example.snplc.ui.main.dialogs.CommentDialog"
+        android:label="CommentDialog" >
+        <argument
+            android:name="postId"
+            app:argType="string" />
+    </dialog>
 </navigation>

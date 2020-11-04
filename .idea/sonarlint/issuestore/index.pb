@@ -85,8 +85,6 @@ z
 Japp/src/main/java/com/example/snplc/ui/main/viewmodels/ProfileViewModel.kt,0\5\05f600ec9f7a126c1fa2dae74df262af5c4f7ca5
 ~
 Napp/src/main/java/com/example/snplc/ui/main/fragments/OthersProfileFragment.kt,0\e\0ea75d6556bf0fee4d446651173b75915c13cf0f
-^
-.app/src/main/res/navigation/main_nav_graph.xml,0\3\0388e14911aba5a195da0bd23b7746715c2d6f98
 y
 Iapp/src/main/java/com/example/snplc/ui/main/viewmodels/SearchViewModel.kt,5\b\5b0d8583c56bbbb08917e2184a92391084666de2
 t
