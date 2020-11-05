@@ -99,3 +99,7 @@ t
 Dapp/src/main/java/com/example/snplc/ui/main/dialogs/CommentDialog.kt,a\1\a1fc7a39afaa2ea5cfc38a2b32953034e321a4aa
 z
 Japp/src/main/java/com/example/snplc/ui/main/viewmodels/CommentViewModel.kt,3\5\35d17b8a1e36be064cc9aa143c49f6d0d569d975
+r
+Bapp/src/main/java/com/example/snplc/data/entities/ProfileUpdate.kt,b\8\b83a7174f9e0b74fdead897cd25715fd0a78e1f1
+{
+Kapp/src/main/java/com/example/snplc/ui/main/viewmodels/SettingsViewModel.kt,9\3\933d68d6e74046a5a303a478843989861543f803
