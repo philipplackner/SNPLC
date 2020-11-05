@@ -91,3 +91,11 @@ t
 Dapp/src/main/java/com/example/snplc/ui/main/dialogs/LikedByDialog.kt,f\7\f78269e9d382dd5ecfb54a38f80f0ac4451251fb
 k
 ;app/src/main/java/com/example/snplc/adapters/UserAdapter.kt,8\b\8b8fd5071850d2cd41208c6705166932fa203467
+l
+<app/src/main/java/com/example/snplc/data/entities/Comment.kt,e\5\e5d460352962c456d3869f8156f0e089a3cfc712
+n
+>app/src/main/java/com/example/snplc/adapters/CommentAdapter.kt,3\d\3d898228c76e348dfbeb5470e152ce72fab7ad6b
+t
+Dapp/src/main/java/com/example/snplc/ui/main/dialogs/CommentDialog.kt,a\1\a1fc7a39afaa2ea5cfc38a2b32953034e321a4aa
+z
+Japp/src/main/java/com/example/snplc/ui/main/viewmodels/CommentViewModel.kt,3\5\35d17b8a1e36be064cc9aa143c49f6d0d569d975

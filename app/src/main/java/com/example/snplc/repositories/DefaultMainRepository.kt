@@ -3,7 +3,9 @@ package com.example.snplc.repositories
 import android.net.Uri
 import com.example.snplc.data.entities.Comment
 import com.example.snplc.data.entities.Post
+import com.example.snplc.data.entities.ProfileUpdate
 import com.example.snplc.data.entities.User
+import com.example.snplc.other.Constants.DEFAULT_PROFILE_PICTURE_URL
 import com.example.snplc.other.Resource
 import com.example.snplc.other.safeCall
 import com.google.firebase.auth.FirebaseAuth
@@ -145,6 +147,33 @@ class DefaultMainRepository : MainRepository {
                 Resource.Success(comment)
             }
         }
+
+    override suspend fun updateProfilePicture(uid: String, imageUri: Uri) =
+        withContext(Dispatchers.IO) {
+            val storageRef = storage.getReference(uid)
+            val user = getUser(uid).data!!
+            if (user.profilePictureUrl != DEFAULT_PROFILE_PICTURE_URL) {
+                storage.getReferenceFromUrl(user.profilePictureUrl).delete().await()
+            }
+            storageRef.putFile(imageUri).await().metadata?.reference?.downloadUrl?.await()
+        }
+
+    override suspend fun updateProfile(profileUpdate: ProfileUpdate) = withContext(Dispatchers.IO) {
+        safeCall {
+            val imageUrl = profileUpdate.profilePictureUri?.let { uri ->
+                updateProfilePicture(profileUpdate.uidToUpdate, uri).toString()
+            }
+            val map = mutableMapOf(
+                "username" to profileUpdate.username,
+                "description" to profileUpdate.description
+            )
+            imageUrl?.let { url ->
+                map["profilePictureUrl"] = url
+            }
+            users.document(profileUpdate.uidToUpdate).update(map.toMap()).await()
+            Resource.Success(Any())
+        }
+    }
 
     override suspend fun deleteComment(comment: Comment) = withContext(Dispatchers.IO) {
         safeCall {

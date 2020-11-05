@@ -3,6 +3,7 @@ package com.example.snplc.repositories
 import android.net.Uri
 import com.example.snplc.data.entities.Comment
 import com.example.snplc.data.entities.Post
+import com.example.snplc.data.entities.ProfileUpdate
 import com.example.snplc.data.entities.User
 import com.example.snplc.other.Resource
 
@@ -31,4 +32,8 @@ interface MainRepository {
     suspend fun deleteComment(comment: Comment): Resource<Comment>
 
     suspend fun getCommentForPost(postId: String): Resource<List<Comment>>
+
+    suspend fun updateProfile(profileUpdate: ProfileUpdate): Resource<Any>
+
+    suspend fun updateProfilePicture(uid: String, imageUri: Uri): Uri?
 }
