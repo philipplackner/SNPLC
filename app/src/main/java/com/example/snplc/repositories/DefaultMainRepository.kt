@@ -209,9 +209,14 @@ class DefaultMainRepository : MainRepository {
 
     override suspend fun getUsers(uids: List<String>) = withContext(Dispatchers.IO) {
         safeCall {
-            val usersList = users.whereIn("uid", uids).orderBy("username").get().await()
-                .toObjects(User::class.java)
-            Resource.Success(usersList)
+            val chunks = uids.chunked(10)
+            val resultList = mutableListOf<User>()
+            chunks.forEach { chunk ->
+                val usersList = users.whereIn("uid", uids).orderBy("username").get().await()
+                    .toObjects(User::class.java)
+                resultList.addAll(usersList)
+            }
+            Resource.Success(resultList.toList())
         }
     }
 

@@ -7,8 +7,6 @@ o
 ?app/src/main/java/com/example/snplc/SocialNetworkApplication.kt,1\a\1a6d71dc2dc36e37f917601c874c85fd9c441f3b
 e
 5app/src/main/java/com/example/snplc/other/Resource.kt,e\d\ed54503540786c4b4b30b508a4fde4a672f24bf8
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 <
@@ -103,3 +101,7 @@ r
 Bapp/src/main/java/com/example/snplc/data/entities/ProfileUpdate.kt,b\8\b83a7174f9e0b74fdead897cd25715fd0a78e1f1
 {
 Kapp/src/main/java/com/example/snplc/ui/main/viewmodels/SettingsViewModel.kt,9\3\933d68d6e74046a5a303a478843989861543f803
+
+Qapp/src/main/java/com/example/snplc/data/pagingsource/ProfilePostsPagingSource.kt,f\7\f7bebd4b05d8d60601f3e37287b73a901c0c6eee
+€
+Papp/src/main/java/com/example/snplc/data/pagingsource/FollowPostsPagingSource.kt,7\c\7c172a506ccc8ec136784b6b8c2e5d0ecce4f4ef
